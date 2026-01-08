@@ -13,8 +13,6 @@ const Index = () => {
       <MotDirectionPreview />
       <AboutPreview />
       <WhyChooseUs />
-      {/* White separator between sections */}
-      <div className="py-16 sm:py-20 bg-white" />
       <ValuesSection />
       <CTASection />
     </Layout>
