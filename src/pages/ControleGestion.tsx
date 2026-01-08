@@ -53,30 +53,36 @@ const ControleGestion = () => {
   return (
     <Layout>
       {/* Page Header */}
-      <section className="py-20 lg:py-28 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src={controleImage?.image_url || controleGestionHeroImage} 
-            alt={controleImage?.alt_text || "Contrôle de gestion"} 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <p className="text-white font-medium uppercase tracking-wide mb-4">
-              Contrôle de Gestion
-            </p>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Mise en place et accompagnement du contrôle de gestion et du reporting
-            </h1>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              Le Cabinet Général de Consulting (CGC) accompagne les entreprises dans la mise en place, la structuration et l'optimisation du contrôle de gestion, ainsi que dans le déploiement de reportings fiables et pertinents, véritables outils de pilotage et d'aide à la décision.
-            </p>
-          </motion.div>
+      <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <p className="text-white font-medium uppercase tracking-wide mb-4">
+                Contrôle de Gestion
+              </p>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                Mise en place et accompagnement du contrôle de gestion et du reporting
+              </h1>
+              <p className="text-primary-foreground/80 text-lg leading-relaxed">
+                Le Cabinet Général de Consulting (CGC) accompagne les entreprises dans la mise en place, la structuration et l'optimisation du contrôle de gestion, ainsi que dans le déploiement de reportings fiables et pertinents, véritables outils de pilotage et d'aide à la décision.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative"
+            >
+              <img 
+                src={controleImage?.image_url || controleGestionHeroImage} 
+                alt={controleImage?.alt_text || "Contrôle de gestion"} 
+                className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
