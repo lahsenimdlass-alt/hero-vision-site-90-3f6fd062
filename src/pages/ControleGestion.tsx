@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { BarChart3, CheckCircle, Target, TrendingUp, PieChart, LineChart, AlertCircle, Calculator } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import controleGestionDefaultImage from "@/assets/controle-gestion.jpeg";
+import controleGestionHeroImage from "@/assets/controle-gestion-hero.jpeg";
 
 const interventions = [
   "Diagnostic de la fonction contrôle de gestion : analyse des processus, des outils, des pratiques et des besoins décisionnels",
@@ -52,8 +53,15 @@ const ControleGestion = () => {
   return (
     <Layout>
       {/* Page Header */}
-      <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
-        <div className="container-custom">
+      <section className="py-20 lg:py-28 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={controleImage?.image_url || controleGestionHeroImage} 
+            alt={controleImage?.alt_text || "Contrôle de gestion"} 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

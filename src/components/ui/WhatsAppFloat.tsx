@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const WhatsAppFloat = () => {
-  const phoneNumber = "212522000000"; // Numéro sans + ni espaces
+  const phoneNumber = "212701221464"; // Numéro sans + ni espaces
   const message = "Bonjour, je souhaite avoir plus d'informations sur vos services.";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

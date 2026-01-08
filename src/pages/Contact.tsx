@@ -32,12 +32,17 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Build WhatsApp message
+    const message = `*Nouveau message de contact*%0A%0A*Nom:* ${formData.name}%0A*Email:* ${formData.email}%0A*Téléphone:* ${formData.phone || 'Non renseigné'}%0A*Entreprise:* ${formData.company || 'Non renseignée'}%0A*Sujet:* ${formData.subject}%0A%0A*Message:*%0A${formData.message}`;
+    
+    const whatsappUrl = `https://wa.me/212701221464?text=${message}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
 
     toast({
-      title: "Message envoyé !",
-      description: "Nous vous répondrons dans les plus brefs délais.",
+      title: "Redirection vers WhatsApp",
+      description: "Envoyez votre message via WhatsApp pour nous contacter.",
     });
 
     setFormData({
