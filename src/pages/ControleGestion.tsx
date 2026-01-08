@@ -55,34 +55,21 @@ const ControleGestion = () => {
       {/* Page Header */}
       <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <p className="text-white font-medium uppercase tracking-wide mb-4">
-                Contrôle de Gestion
-              </p>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Mise en place et accompagnement du contrôle de gestion et du reporting
-              </h1>
-              <p className="text-primary-foreground/80 text-lg leading-relaxed">
-                Le Cabinet Général de Consulting (CGC) accompagne les entreprises dans la mise en place, la structuration et l'optimisation du contrôle de gestion, ainsi que dans le déploiement de reportings fiables et pertinents, véritables outils de pilotage et d'aide à la décision.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="relative"
-            >
-              <img 
-                src={controleImage?.image_url || controleGestionHeroImage} 
-                alt={controleImage?.alt_text || "Contrôle de gestion"} 
-                className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
-              />
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <p className="text-white font-medium uppercase tracking-wide mb-4">
+              Contrôle de Gestion
+            </p>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Mise en place et accompagnement du contrôle de gestion et du reporting
+            </h1>
+            <p className="text-primary-foreground/80 text-lg leading-relaxed">
+              Le Cabinet Général de Consulting (CGC) accompagne les entreprises dans la mise en place, la structuration et l'optimisation du contrôle de gestion, ainsi que dans le déploiement de reportings fiables et pertinents, véritables outils de pilotage et d'aide à la décision.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -100,8 +87,21 @@ const ControleGestion = () => {
             </h2>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card rounded-2xl p-8 lg:p-12 border border-border">
+          <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img 
+                src={controleImage?.image_url || controleGestionHeroImage} 
+                alt={controleImage?.alt_text || "Contrôle de gestion"} 
+                className="w-full h-80 lg:h-[500px] object-cover rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+
+            <div className="bg-card rounded-2xl p-8 lg:p-10 border border-border">
               <ul className="space-y-6">
                 {interventions.map((intervention, idx) => (
                   <motion.li
