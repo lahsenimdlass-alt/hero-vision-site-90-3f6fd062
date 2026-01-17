@@ -124,6 +124,28 @@ const ControleGestion = () => {
         </div>
       </section>
 
+      {/* Objectif Global */}
+      <section className="py-16 lg:py-20 bg-accent/10">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="text-4xl">🎯</span>
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
+                Objectif global
+              </h2>
+            </div>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Transformer la fonction Finance en un véritable partenaire stratégique, garant de la fiabilité de l'information financière et acteur clé du pilotage de la performance et de la prise de décision.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Objectifs */}
       <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
         <div className="container-custom">
