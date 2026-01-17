@@ -42,13 +42,13 @@ const Header = () => {
         }`}
       >
         <div className="container-custom">
-        <div className="flex items-center justify-between h-28 md:h-32">
+        <div className="flex items-center justify-between h-32 md:h-36">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <img
                 src={logoImage?.image_url || fallbackLogo}
                 alt={logoImage?.alt_text || "CGC - Cabinet Général de Consulting"}
-                className="h-24 md:h-28 w-auto"
+                className="h-28 md:h-32 w-auto"
               />
             </Link>
 

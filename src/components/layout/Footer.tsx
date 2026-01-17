@@ -76,7 +76,8 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-white" />
                 <span className="text-sm text-white/80">
                   Ang Bd Zerktouni, 7 Rue Sebta Res Rami,<br />
-                  2ème étage N° 8, Casablanca
+                  2ème étage N° 8, Casablanca<br />
+                  <span className="text-white/60 text-xs">33°34'56.5"N 7°37'04.3"W</span>
                 </span>
               </li>
               <li>
