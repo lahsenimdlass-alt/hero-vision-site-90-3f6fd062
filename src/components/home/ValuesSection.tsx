@@ -64,7 +64,7 @@ const ValuesSection = () => {
         </motion.div>
 
         {/* Marquee Animation - Single Line */}
-        <div className="relative w-full">
+        <div className="relative w-full overflow-hidden">
           <motion.div
             className="flex whitespace-nowrap w-max"
             animate={{ x: ["0%", "-50%"] }}

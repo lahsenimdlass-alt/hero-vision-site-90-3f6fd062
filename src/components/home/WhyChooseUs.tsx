@@ -35,13 +35,13 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
         >
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Pourquoi choisir le Cabinet Général de Consulting ?
           </h2>
-          <p className="text-accent-on-dark text-sm sm:text-base font-medium tracking-wide mb-4 sm:mb-6">
+          <p className="text-accent-on-dark text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mb-6 sm:mb-8">
             Un partenaire de confiance pour votre croissance
           </p>
-          <p className="text-white/80 text-sm sm:text-base md:text-lg">
+          <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed">
             Notre approche est fondée sur la proximité, la rigueur et des solutions 
             sur mesure pour une performance durable. Nous transformons vos ambitions en actions concrètes.
           </p>
