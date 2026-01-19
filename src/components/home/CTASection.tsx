@@ -15,10 +15,10 @@ const CTASection = () => {
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="text-center lg:text-left relative z-10">
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 sm:mb-6">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
                 Débloquez Votre Potentiel avec CGC
               </h2>
-              <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mb-6 sm:mb-8">
+              <p className="text-muted-foreground text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mb-6 sm:mb-8">
                 Prêt à transformer vos défis en opportunités ? Contactez-nous pour 
                 discuter de votre projet et découvrir comment nous pouvons vous accompagner.
               </p>

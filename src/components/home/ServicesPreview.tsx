@@ -60,13 +60,13 @@ const ServicesPreview = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <p className="text-accent font-medium uppercase tracking-wide mb-4">
+          <p className="text-accent text-lg sm:text-xl md:text-2xl font-semibold uppercase tracking-wide mb-4">
             Nos Expertises
           </p>
           <h2 className="section-title text-foreground mb-6">
             Aux côtés de vos réflexions, de l'idée à sa mise en œuvre
           </h2>
-          <p className="section-subtitle mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             Chez CGC, nous offrons un engagement de réussite avec des solutions 
             concrètes, évolutives et innovantes.
           </p>
