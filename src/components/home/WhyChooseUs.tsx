@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Pourquoi choisir le Cabinet Général de Consulting ?
           </h2>
-          <p className="text-accent-on-dark text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mb-6 sm:mb-8">
+          <p className="text-accent-on-dark text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide mb-6 sm:mb-8">
             Un partenaire de confiance pour votre croissance
           </p>
           <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed">

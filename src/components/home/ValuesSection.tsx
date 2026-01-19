@@ -42,7 +42,7 @@ const ValuesSection = () => {
               transition={{ duration: 0.8 }}
             />
           </div>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             Nos Valeurs
           </h2>
           <div className="flex items-center justify-center gap-4 mt-6">

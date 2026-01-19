@@ -27,7 +27,7 @@ const AboutPreview = () => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
             Qui sommes-nous ?
           </h2>
-          <p className="text-accent text-base sm:text-lg md:text-xl font-semibold tracking-wide mb-6 sm:mb-8">
+          <p className="text-accent text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide mb-6 sm:mb-8">
             Experts en accompagnement stratégique et en conseil opérationnel
           </p>
           <p className="text-foreground text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10">
@@ -68,7 +68,7 @@ const AboutPreview = () => {
               <h3 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
                 Notre Mission
               </h3>
-              <p className="text-accent text-base sm:text-lg md:text-xl font-semibold tracking-wide mb-6 sm:mb-8">
+              <p className="text-accent text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide mb-6 sm:mb-8">
                 Mettre de l'ordre, là où la performance stagne.
               </p>
               <p className="text-foreground text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-6">

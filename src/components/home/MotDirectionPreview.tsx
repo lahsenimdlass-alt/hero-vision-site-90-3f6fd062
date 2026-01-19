@@ -18,7 +18,7 @@ const MotDirectionPreview = () => {
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 text-center">
             Mot de la Direction
           </h2>
-          <p className="text-accent text-sm sm:text-base font-medium tracking-wide mb-6 sm:mb-8 text-center">
+          <p className="text-accent text-lg sm:text-xl md:text-2xl font-semibold tracking-wide mb-6 sm:mb-8 text-center">
             Notre Vision & Engagement
           </p>
 
