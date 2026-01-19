@@ -181,7 +181,7 @@ const Accompagnement = () => {
                 </h2>
               </div>
 
-              <p className="text-muted-foreground text-lg mb-6">
+              <p className="text-muted-foreground mb-6">
                 Notre approche est pragmatique, structurée et orientée résultats. Elle repose sur trois piliers complémentaires :
               </p>
 
@@ -234,7 +234,7 @@ const Accompagnement = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Nos Domaines d'Intervention
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Nous intervenons sur l'ensemble des fonctions clés de l'entreprise
             </p>
           </motion.div>

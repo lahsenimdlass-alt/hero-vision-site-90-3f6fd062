@@ -156,7 +156,7 @@ const Recrutement = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Notre Approche Recrutement
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Notre démarche est rigoureuse, confidentielle et orientée performance, fondée sur une parfaite compréhension des réalités terrain des fonctions financières.
             </p>
           </motion.div>

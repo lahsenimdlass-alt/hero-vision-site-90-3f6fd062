@@ -139,7 +139,7 @@ const ControleGestion = () => {
                 Objectif global
               </h2>
             </div>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Transformer la fonction Finance en un véritable partenaire stratégique, garant de la fiabilité de l'information financière et acteur clé du pilotage de la performance et de la prise de décision.
             </p>
           </motion.div>
@@ -158,7 +158,7 @@ const ControleGestion = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
               Objectifs
             </h2>
-            <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
+            <p className="text-primary-foreground/80 max-w-2xl mx-auto">
               Des résultats concrets pour votre entreprise
             </p>
           </motion.div>

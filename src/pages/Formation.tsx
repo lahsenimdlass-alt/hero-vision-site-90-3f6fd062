@@ -104,7 +104,7 @@ const Formation = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Nos Domaines de Formation
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Des programmes adaptés à chaque besoin pour développer les compétences de vos équipes
             </p>
           </motion.div>
@@ -159,14 +159,14 @@ const Formation = () => {
                 </h2>
               </div>
               
-              <p className="text-muted-foreground text-lg mb-4">
+              <p className="text-muted-foreground mb-4">
                 Le Cabinet Général de Consulting (CGC) est un organisme de formation éligible aux Contrats Spéciaux de Formation (CSF), dispositif géré par l'OFPPT.
               </p>
               <p className="text-foreground mb-6">
                 À ce titre, CGC accompagne les entreprises dans la mobilisation des financements et la sécurisation de leurs plans de formation, tout en assurant une prise en charge complète des démarches.
               </p>
 
-              <h3 className="font-semibold text-foreground mb-4 text-lg">
+              <h3 className="font-semibold text-foreground mb-4">
                 🔹 Notre accompagnement CSF
               </h3>
               <p className="text-foreground mb-4">
@@ -212,7 +212,7 @@ const Formation = () => {
                 </h2>
               </div>
               
-              <p className="text-accent font-semibold text-lg mb-4">
+              <p className="text-accent font-semibold mb-4">
                 Un accompagnement clé en main – de A à Z
               </p>
               <p className="text-foreground mb-6">
@@ -265,7 +265,7 @@ const Formation = () => {
                 </h2>
               </div>
               
-              <p className="text-foreground text-lg mb-6">
+              <p className="text-foreground mb-6">
                 Le Cabinet Général de Consulting (CGC) conçoit et déploie des formations intra-entreprise entièrement adaptées à vos enjeux métiers, à votre secteur d'activité et à vos objectifs stratégiques.
               </p>
 
@@ -301,7 +301,7 @@ const Formation = () => {
                 </h2>
               </div>
               
-              <p className="text-accent font-semibold text-lg mb-6">
+              <p className="text-accent font-semibold mb-6">
                 En présentiel ou à distance
               </p>
 
