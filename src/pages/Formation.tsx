@@ -104,7 +104,7 @@ const Formation = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Nos Domaines de Formation
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-foreground max-w-2xl mx-auto">
               Des programmes adaptés à chaque besoin pour développer les compétences de vos équipes
             </p>
           </motion.div>
@@ -159,7 +159,7 @@ const Formation = () => {
                 </h2>
               </div>
               
-              <p className="text-muted-foreground mb-4">
+              <p className="text-foreground mb-4">
                 Le Cabinet Général de Consulting (CGC) est un organisme de formation éligible aux Contrats Spéciaux de Formation (CSF), dispositif géré par l'OFPPT.
               </p>
               <p className="text-foreground mb-6">
