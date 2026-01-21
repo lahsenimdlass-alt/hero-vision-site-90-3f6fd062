@@ -76,14 +76,19 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-white" />
                 <span className="text-sm text-white/80">
                   Ang Bd Zerktouni, 7 Rue Sebta Res Rami,<br />
-                  2ème étage N° 8, Casablanca<br />
-                  <span className="text-white/60 text-xs">33°34'56.5"N 7°37'04.3"W</span>
+                  2ème étage N° 8, Casablanca
                 </span>
               </li>
               <li>
                 <a href="tel:+212701221464" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                   <Phone className="w-5 h-5 text-white" />
-                  <span className="text-sm">+212 701 221 464 (GSM)</span>
+                  <span className="text-sm">+212 701 221 464</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+212645813631" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                  <Phone className="w-5 h-5 text-white" />
+                  <span className="text-sm">+212 645 813 631</span>
                 </a>
               </li>
               <li>
