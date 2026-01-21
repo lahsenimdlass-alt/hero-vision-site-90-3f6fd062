@@ -265,7 +265,7 @@ const Accompagnement = () => {
                 {fonction.subtitle && (
                   <div className="mb-4">
                     <p className="text-foreground font-medium text-sm mb-2">{fonction.subtitle}</p>
-                    <p className="text-foreground text-xs">{fonction.subtitleDesc}</p>
+                    <p className="text-foreground text-sm">{fonction.subtitleDesc}</p>
                   </div>
                 )}
 
