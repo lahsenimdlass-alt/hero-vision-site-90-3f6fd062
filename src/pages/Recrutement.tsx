@@ -103,7 +103,7 @@ const Recrutement = () => {
                   <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
                     Profils Recrutés
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Nous recrutons notamment les profils suivants :
                   </p>
                 </div>
@@ -156,7 +156,7 @@ const Recrutement = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Notre Approche Recrutement
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-foreground max-w-2xl mx-auto">
               Notre démarche est rigoureuse, confidentielle et orientée performance, fondée sur une parfaite compréhension des réalités terrain des fonctions financières.
             </p>
           </motion.div>
