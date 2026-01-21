@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
-import { GraduationCap, CheckCircle, FileText, Users, Building2, Target, Star, Settings, User, PiggyBank, Handshake } from "lucide-react";
+import { GraduationCap, CheckCircle, FileText, Users, Building2, Target, Star, Settings, User, PiggyBank, Handshake, Monitor } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import formationDefaultImage from "@/assets/formation.jpeg";
 
@@ -29,6 +29,11 @@ const trainingDomains = [
     icon: Handshake,
     title: "Relation Client et Commercial",
     description: "Optimisation des ventes, fidélisation, gestion de la relation client."
+  },
+  {
+    icon: Monitor,
+    title: "Systèmes d'Information & ERP",
+    description: "SAGE, SAP, Power BI, Dynamics 365 FO, etc."
   }
 ];
 
@@ -190,7 +195,6 @@ const Formation = () => {
               
               <div className="p-6 bg-accent/10 rounded-xl border border-accent/20">
                 <p className="text-foreground">
-                  <Target className="w-5 h-5 text-accent inline mr-2" />
                   <strong>🎯 Objectifs :</strong> Permettre aux entreprises de former leurs équipes à moindre coût, tout en garantissant la conformité réglementaire, la qualité des actions de formation et la sécurisation des remboursements.
                 </p>
               </div>

@@ -29,7 +29,8 @@ const fonctions = [
       "Améliorer le pilotage de la performance et la visibilité financière",
       "Soutenir la prise de décision stratégique",
       "Optimiser les processus et l'organisation de la fonction Finance",
-    ]
+    ],
+    objectifGlobal: "Transformer la fonction Finance en un véritable partenaire stratégique, garant de la fiabilité de l'information financière et acteur clé du pilotage de la performance et de la prise de décision."
   },
   {
     icon: Users,
@@ -200,7 +201,7 @@ const Accompagnement = () => {
 
               <div className="p-6 bg-accent/10 rounded-xl border border-accent/20">
                 <p className="text-foreground font-medium">
-                  <Target className="w-5 h-5 text-accent inline mr-2" />
+                  <span className="mr-2">🎯</span>
                   <strong>Objectif :</strong> Transformer les constats en actions concrètes, génératrices de valeur mesurable et de performance durable.
                 </p>
               </div>
@@ -281,9 +282,18 @@ const Accompagnement = () => {
                   ))}
                 </ul>
 
+                {fonction.objectifGlobal && (
+                  <div className="p-4 bg-accent/10 rounded-xl border border-accent/20 mt-4">
+                    <p className="text-sm text-foreground font-medium">
+                      <span className="mr-1">🎯</span>
+                      <strong>Objectif global :</strong> {fonction.objectifGlobal}
+                    </p>
+                  </div>
+                )}
+
                 {fonction.objectif && (
                   <p className="text-xs text-accent font-medium mt-4 pt-4 border-t border-border">
-                    <Target className="w-4 h-4 inline mr-1" />
+                    <span className="mr-1">🎯</span>
                     {fonction.objectif}
                   </p>
                 )}
