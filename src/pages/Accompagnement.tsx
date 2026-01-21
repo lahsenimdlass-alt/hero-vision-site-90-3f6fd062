@@ -257,14 +257,14 @@ const Accompagnement = () => {
                   {fonction.title}
                 </h3>
 
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-foreground text-sm mb-4">
                   {fonction.description}
                 </p>
 
                 {fonction.subtitle && (
                   <div className="mb-4">
                     <p className="text-foreground font-medium text-sm mb-2">{fonction.subtitle}</p>
-                    <p className="text-muted-foreground text-xs">{fonction.subtitleDesc}</p>
+                    <p className="text-foreground text-xs">{fonction.subtitleDesc}</p>
                   </div>
                 )}
 
