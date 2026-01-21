@@ -130,7 +130,7 @@ const Formation = () => {
                   <h3 className="font-display text-lg font-bold text-foreground mb-3">
                     {domain.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-foreground text-sm leading-relaxed">
                     {domain.description}
                   </p>
                 </div>
@@ -272,13 +272,13 @@ const Formation = () => {
               <div className="space-y-6">
                 <div className="pl-4 border-l-2 border-accent/30">
                   <h4 className="font-semibold text-foreground mb-2">✓ Une approche ancrée dans la réalité terrain</h4>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Nos programmes sont construits à partir de vos pratiques internes et de vos problématiques réelles, garantissant une application immédiate des acquis dans votre environnement professionnel.
                   </p>
                 </div>
                 <div className="pl-4 border-l-2 border-accent/30">
                   <h4 className="font-semibold text-foreground mb-2">✓ Des formations opérationnelles et orientées résultats</h4>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Grâce à une pédagogie pragmatique et interactive, nous renforçons durablement les compétences de vos équipes et contribuons directement à la performance globale de votre organisation.
                   </p>
                 </div>
@@ -308,19 +308,19 @@ const Formation = () => {
               <div className="space-y-6">
                 <div className="pl-4 border-l-2 border-accent/30">
                   <h4 className="font-semibold text-foreground mb-2">✓ Des formations actualisées et orientées terrain</h4>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     CGC propose des formations inter-entreprise conçues pour les entreprises et les professionnels souhaitant renforcer leurs compétences sur des thématiques clés et actuelles.
                   </p>
                 </div>
                 <div className="pl-4 border-l-2 border-accent/30">
                   <h4 className="font-semibold text-foreground mb-2">✓ Un cadre propice au partage et à l'enrichissement</h4>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Nos programmes favorisent le partage d'expériences, l'apprentissage collectif et l'enrichissement mutuel entre participants issus de différents horizons.
                   </p>
                 </div>
                 <div className="pl-4 border-l-2 border-accent/30">
                   <h4 className="font-semibold text-foreground mb-2">✓ Une pédagogie pratique et immédiatement applicable</h4>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Animées par des experts métiers, nos formations combinent apports pratiques, échanges concrets et cas réels, permettant une mise en application immédiate en contexte professionnel.
                   </p>
                 </div>

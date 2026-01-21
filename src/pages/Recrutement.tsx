@@ -182,7 +182,7 @@ const Recrutement = () => {
                 
                 <ul className="space-y-3">
                   {etape.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-muted-foreground">
+                    <li key={idx} className="flex items-start gap-3 text-foreground">
                       <CheckCircle className="w-4 h-4 text-accent mt-1 shrink-0" />
                       <span>{item}</span>
                     </li>
