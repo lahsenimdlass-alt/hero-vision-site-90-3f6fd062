@@ -1,22 +1,24 @@
 import { motion } from "framer-motion";
 import { Settings, Monitor, GraduationCap, UserCheck, BarChart3 } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
+import { useLanguage } from "@/contexts/LanguageContext";
 import notreMissionImage from "@/assets/notre-mission.jpeg";
 
-const services = [
-  { icon: Settings, text: "Réorganisation & structuration" },
-  { icon: Monitor, text: "Systèmes d'information & digitalisation" },
-  { icon: GraduationCap, text: "Ingénierie de Formation" },
-  { icon: UserCheck, text: "Recrutement de profils financiers" },
-  { icon: BarChart3, text: "Tenue et optimisation du contrôle de gestion" },
-];
 const AboutPreview = () => {
   const { data: aboutImage } = useSiteImage("about_image");
+  const { t } = useLanguage();
+
+  const services = [
+    { icon: Settings, text: t('about.service1') },
+    { icon: Monitor, text: t('about.service2') },
+    { icon: GraduationCap, text: t('about.service3') },
+    { icon: UserCheck, text: t('about.service4') },
+    { icon: BarChart3, text: t('about.service5') },
+  ];
 
   return (
     <section id="about-preview" className="py-12 sm:py-16 lg:py-28 bg-background">
       <div className="container-custom px-4 sm:px-6">
-        {/* Qui sommes-nous */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,17 +27,16 @@ const AboutPreview = () => {
           className="text-center max-w-4xl mx-auto mb-10 sm:mb-16"
         >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
-            Qui sommes-nous ?
+            {t('about.who_are_we')}
           </h2>
           <p className="text-accent text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide mb-6 sm:mb-8">
-            Experts en accompagnement stratégique et en conseil opérationnel
+            {t('about.experts_subtitle')}
           </p>
           <p className="text-foreground text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10">
-            Nous concevons des solutions sur mesure, à la fois innovantes et 
-            parfaitement alignées avec les enjeux spécifiques de chaque secteur d'activité.
+            {t('about.intro_text')}
           </p>
           
-          <p className="text-foreground font-bold text-lg sm:text-xl mb-6 sm:mb-8">Notre cabinet CGC vous accompagne dans :</p>
+          <p className="text-foreground font-bold text-lg sm:text-xl mb-6 sm:mb-8">{t('about.cgc_helps')}</p>
           
           <div className="flex flex-col gap-4 mb-6 sm:mb-8 max-w-2xl mx-auto">
             {services.map((service, index) => (
@@ -52,10 +53,8 @@ const AboutPreview = () => {
               </motion.div>
             ))}
           </div>
-
         </motion.div>
 
-        {/* Notre Mission */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,23 +65,22 @@ const AboutPreview = () => {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div className="text-center lg:text-left">
               <h3 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
-                Notre Mission
+                {t('about.mission_title')}
               </h3>
               <p className="text-accent text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide mb-6 sm:mb-8">
-                Mettre de l'ordre, là où la performance stagne.
+                {t('about.mission_subtitle')}
               </p>
               <p className="text-foreground text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-6">
-                Faire passer votre organisation d'un pilotage approximatif à une performance maîtrisée.
+                {t('about.mission_text1')}
               </p>
               <p className="text-foreground text-base sm:text-lg md:text-xl leading-relaxed">
-                Structurer, sécuriser et optimiser vos décisions grâce à une expertise terrain 
-                et des solutions sur mesure et orientées résultats.
+                {t('about.mission_text2')}
               </p>
             </div>
             <div>
               <img 
                 src={aboutImage?.image_url || notreMissionImage} 
-                alt={aboutImage?.alt_text || "Notre mission"}
+                alt={aboutImage?.alt_text || t('about.mission_title')}
                 loading="lazy"
                 className="rounded-xl shadow-lg w-full h-72 sm:h-80 object-cover"
               />
