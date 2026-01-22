@@ -2,51 +2,31 @@ import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
 import { CheckCircle } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
-import controleGestionDefaultImage from "@/assets/controle-gestion.jpeg";
+import { useLanguage } from "@/contexts/LanguageContext";
 import controleGestionHeroImage from "@/assets/controle-gestion-hero.jpeg";
-
-const interventions = [
-  "Diagnostic de la fonction contrôle de gestion : analyse des processus, des outils, des pratiques et des besoins décisionnels",
-  "Mise en place du contrôle de gestion : élaboration des budgets, forecasts, tableaux de bord et dispositifs de suivi",
-  "Comptabilité analytique et calcul des coûts : structuration des centres de coûts, méthodes de calcul et analyse des marges",
-  "Accompagnement du reporting : conception, automatisation et fiabilisation des reportings financiers et opérationnels",
-  "Analyse des écarts et recommandations : interprétation des résultats, alertes et plans d'actions correctifs",
-  "Accompagnement terrain : montée en compétence des équipes et appui à la direction dans la prise de décision",
-];
-
-const objectifs = [
-  {
-    title: "Reporting Clair",
-    description: "Disposer d'un reporting clair, fiable et orienté décision"
-  },
-  {
-    title: "Pilotage Performance",
-    description: "Améliorer le pilotage de la performance"
-  },
-  {
-    title: "Maîtrise des Coûts",
-    description: "Renforcer la maîtrise des coûts et des marges"
-  },
-  {
-    title: "Décisions Stratégiques",
-    description: "Soutenir des décisions stratégiques éclairées"
-  },
-  {
-    title: "Anticipation des Écarts",
-    description: "Anticiper les écarts et alerter en temps réel"
-  },
-  {
-    title: "Optimisation Budgétaire",
-    description: "Optimiser l'allocation des ressources et le budget"
-  },
-  {
-    title: "Résultats Concrets",
-    description: "Atteindre des résultats concrets pour votre entreprise"
-  },
-];
 
 const ControleGestion = () => {
   const { data: controleImage } = useSiteImage("controle_gestion_image");
+  const { t } = useLanguage();
+
+  const interventions = [
+    t('controle.intervention1'),
+    t('controle.intervention2'),
+    t('controle.intervention3'),
+    t('controle.intervention4'),
+    t('controle.intervention5'),
+    t('controle.intervention6'),
+  ];
+
+  const objectifs = [
+    { title: t('controle.obj1_title'), description: t('controle.obj1_desc') },
+    { title: t('controle.obj2_title'), description: t('controle.obj2_desc') },
+    { title: t('controle.obj3_title'), description: t('controle.obj3_desc') },
+    { title: t('controle.obj4_title'), description: t('controle.obj4_desc') },
+    { title: t('controle.obj5_title'), description: t('controle.obj5_desc') },
+    { title: t('controle.obj6_title'), description: t('controle.obj6_desc') },
+    { title: t('controle.obj7_title'), description: t('controle.obj7_desc') },
+  ];
 
   return (
     <Layout>
@@ -59,14 +39,13 @@ const ControleGestion = () => {
             className="max-w-3xl"
           >
             <p className="text-white font-medium uppercase tracking-wide mb-4">
-              Contrôle de Gestion
+              {t('controle.label')}
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Mise en place<br />
-              Et accompagnement du contrôle de gestion et du reporting
+              {t('controle.title')}
             </h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              Le Cabinet Général de Consulting (CGC) accompagne les entreprises dans la mise en place, la structuration et l'optimisation du contrôle de gestion, ainsi que dans le déploiement de reportings fiables et pertinents, véritables outils de pilotage et d'aide à la décision.
+              {t('controle.description')}
             </p>
           </motion.div>
         </div>
@@ -82,7 +61,7 @@ const ControleGestion = () => {
             className="text-center mb-16"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Nos axes d'intervention
+              {t('controle.interventions_title')}
             </h2>
           </motion.div>
 
@@ -95,7 +74,7 @@ const ControleGestion = () => {
             >
               <img 
                 src={controleImage?.image_url || controleGestionHeroImage} 
-                alt={controleImage?.alt_text || "Contrôle de gestion"} 
+                alt={controleImage?.alt_text || t('controle.label')} 
                 className="w-full h-80 lg:h-[500px] object-cover rounded-2xl shadow-2xl"
               />
             </motion.div>
@@ -135,11 +114,11 @@ const ControleGestion = () => {
             <div className="flex items-center justify-center gap-3 mb-6">
               <span className="text-4xl">🎯</span>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-                Objectif global
+                {t('controle.global_objective')}
               </h2>
             </div>
             <p className="text-foreground leading-relaxed">
-              Transformer la fonction Finance en un véritable partenaire stratégique, garant de la fiabilité de l'information financière et acteur clé du pilotage de la performance et de la prise de décision.
+              {t('controle.global_objective_desc')}
             </p>
           </motion.div>
         </div>
@@ -155,7 +134,7 @@ const ControleGestion = () => {
             className="text-center mb-16"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Objectifs spécifiques
+              {t('controle.specific_objectives')}
             </h2>
           </motion.div>
 

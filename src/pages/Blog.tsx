@@ -4,6 +4,7 @@ import Layout from '@/components/layout/Layout';
 import { supabase } from '@/integrations/supabase/client';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Blog {
   id: string;
@@ -17,6 +18,7 @@ interface Blog {
 const Blog = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     fetchBlogs();
@@ -36,7 +38,7 @@ const Blog = () => {
   };
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('fr-FR', {
+    return new Date(dateString).toLocaleDateString(language === 'en' ? 'en-US' : 'fr-FR', {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
@@ -53,7 +55,7 @@ const Blog = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Notre Blog
+            {t('blog.title')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +63,7 @@ const Blog = () => {
             transition={{ delay: 0.1 }}
             className="text-xl text-white/80 max-w-2xl mx-auto"
           >
-            Actualités, conseils et expertises en gestion d'entreprise
+            {t('blog.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -84,7 +86,7 @@ const Blog = () => {
             </div>
           ) : blogs.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">Aucun article pour le moment.</p>
+              <p className="text-muted-foreground text-lg">{t('blog.no_articles')}</p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -124,7 +126,7 @@ const Blog = () => {
                         </p>
                       )}
                       <span className="inline-flex items-center gap-2 text-gold font-medium group-hover:gap-3 transition-all">
-                        Lire la suite <ArrowRight className="w-4 h-4" />
+                        {t('blog.read_more')} <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
                   </Link>
