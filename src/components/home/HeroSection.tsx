@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
 import AnimatedCounter from "./AnimatedCounter";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  
   const scrollToContent = () => {
     const element = document.getElementById("about-preview");
     if (element) {
@@ -42,7 +45,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-white text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase mb-3 md:mb-4"
           >
-            Cabinet Général de Consulting
+            {t('hero.company_name')}
           </motion.p>
 
           <motion.h1
@@ -51,9 +54,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 text-white"
           >
-            Catalyseur de<br />
-            <span className="text-[hsl(212,55%,85%)]">Transformation</span><br />
-            <span className="text-white">&</span> <span className="text-[hsl(212,55%,85%)]">Levier de Performance</span>
+            {t('hero.title_line1')}<br />
+            <span className="text-[hsl(212,55%,85%)]">{t('hero.title_line2')}</span><br />
+            <span className="text-[hsl(212,55%,85%)]">{t('hero.title_line3')}</span>
           </motion.h1>
 
           <motion.p
@@ -62,8 +65,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-sm sm:text-base md:text-xl text-white/90 max-w-2xl mb-6 md:mb-8 leading-relaxed"
           >
-            Cabinet pluridisciplinaire qui transforme vos ambitions en actions concrètes, 
-            en fournissant un soutien opérationnel orienté résultats.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -93,28 +95,28 @@ const HeroSection = () => {
               suffix="+"
               duration={2.5}
               delay={0}
-              label="Années d'expérience"
+              label={t('hero.years_experience')}
             />
             <AnimatedCounter
               end={5}
               suffix="+"
               duration={1.8}
               delay={0.2}
-              label="Domaine d'expertise"
+              label={t('hero.expertise_areas')}
             />
             <AnimatedCounter
               end={70}
               suffix="%"
               duration={2.2}
               delay={0.4}
-              label="Subvention possible"
+              label={t('hero.subsidy_possible')}
             />
             <AnimatedCounter
               end={100}
               suffix="%"
               duration={2.8}
               delay={0.6}
-              label="Sur mesure"
+              label={t('hero.custom_made')}
             />
           </motion.div>
         </motion.div>
