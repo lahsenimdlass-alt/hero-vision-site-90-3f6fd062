@@ -62,7 +62,7 @@ const ControleGestion = () => {
               Contrôle de Gestion
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Mise en place...<br />
+              Mise en place<br />
               Et accompagnement du contrôle de gestion et du reporting
             </h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
