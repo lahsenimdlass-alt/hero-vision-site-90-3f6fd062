@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import fallbackLogo from "@/assets/logo.jpg";
 
@@ -102,25 +102,13 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/khadija-b-94624a19a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
