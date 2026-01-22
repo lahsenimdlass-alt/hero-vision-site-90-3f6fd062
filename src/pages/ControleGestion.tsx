@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
-import { BarChart3, CheckCircle, Target, TrendingUp, PieChart, LineChart, AlertCircle, Calculator } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import controleGestionDefaultImage from "@/assets/controle-gestion.jpeg";
 import controleGestionHeroImage from "@/assets/controle-gestion-hero.jpeg";
@@ -16,34 +16,32 @@ const interventions = [
 
 const objectifs = [
   {
-    icon: LineChart,
     title: "Reporting Clair",
     description: "Disposer d'un reporting clair, fiable et orienté décision"
   },
   {
-    icon: TrendingUp,
     title: "Pilotage Performance",
     description: "Améliorer le pilotage de la performance"
   },
   {
-    icon: PieChart,
     title: "Maîtrise des Coûts",
     description: "Renforcer la maîtrise des coûts et des marges"
   },
   {
-    icon: Target,
     title: "Décisions Stratégiques",
     description: "Soutenir des décisions stratégiques éclairées"
   },
   {
-    icon: AlertCircle,
     title: "Anticipation des Écarts",
     description: "Anticiper les écarts et alerter en temps réel"
   },
   {
-    icon: Calculator,
     title: "Optimisation Budgétaire",
     description: "Optimiser l'allocation des ressources et le budget"
+  },
+  {
+    title: "Résultats Concrets",
+    description: "Atteindre des résultats concrets pour votre entreprise"
   },
 ];
 
@@ -58,13 +56,14 @@ const ControleGestion = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-3xl"
           >
             <p className="text-white font-medium uppercase tracking-wide mb-4">
               Contrôle de Gestion
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Mise en place et accompagnement du contrôle de gestion et du reporting
+              Mise en place...<br />
+              Et accompagnement du contrôle de gestion et du reporting
             </h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               Le Cabinet Général de Consulting (CGC) accompagne les entreprises dans la mise en place, la structuration et l'optimisation du contrôle de gestion, ainsi que dans le déploiement de reportings fiables et pertinents, véritables outils de pilotage et d'aide à la décision.
@@ -156,11 +155,8 @@ const ControleGestion = () => {
             className="text-center mb-16"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Objectifs
+              Objectifs spécifiques
             </h2>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto">
-              Des résultats concrets pour votre entreprise
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -174,7 +170,7 @@ const ControleGestion = () => {
                 className="p-6 bg-white/10 rounded-xl backdrop-blur-sm text-center"
               >
                 <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
-                  <objectif.icon className="w-7 h-7 text-white" />
+                  <span className="text-3xl">🎯</span>
                 </div>
                 <h3 className="font-display text-lg font-bold mb-2 text-white">
                   {objectif.title}
