@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroPotentielImage from "@/assets/hero-potentiel.jpeg";
 
 const CTASection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-12 sm:py-16 lg:py-28 bg-background">
       <div className="container-custom px-4 sm:px-6">
@@ -16,15 +19,14 @@ const CTASection = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="text-center lg:text-left relative z-10">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
-                Débloquez Votre Potentiel avec CGC
+                {t('cta.title')}
               </h2>
               <p className="text-muted-foreground text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mb-6 sm:mb-8">
-                Prêt à transformer vos défis en opportunités ? Contactez-nous pour 
-                discuter de votre projet et découvrir comment nous pouvons vous accompagner.
+                {t('cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
                 <Link to="/contact" className="btn-primary group text-sm sm:text-base">
-                  Demander un devis gratuit
+                  {t('cta.get_quote')}
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
@@ -39,7 +41,7 @@ const CTASection = () => {
             <div className="hidden lg:block">
               <img 
                 src={heroPotentielImage} 
-                alt="Débloquez votre potentiel avec CGC" 
+                alt={t('cta.title')} 
                 className="rounded-xl shadow-lg w-full h-64 object-cover"
               />
             </div>
