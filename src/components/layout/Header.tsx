@@ -3,23 +3,26 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSiteImage } from "@/hooks/useSiteImage";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import fallbackLogo from "@/assets/logo.svg";
-
-const navItems = [
-  { label: "Accueil", path: "/" },
-  { label: "Conseil & Accompagnement", path: "/accompagnement" },
-  { label: "Recrutement", path: "/recrutement" },
-  { label: "Formation", path: "/formation" },
-  { label: "Contrôle de Gestion", path: "/controle-gestion" },
-  { label: "Blog", path: "/blog" },
-  { label: "Contact", path: "/contact" },
-];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { data: logoImage } = useSiteImage("logo");
+  const { t } = useLanguage();
+
+  const navItems = [
+    { label: t('nav.home'), path: "/" },
+    { label: t('nav.consulting'), path: "/accompagnement" },
+    { label: t('nav.recruitment'), path: "/recrutement" },
+    { label: t('nav.training'), path: "/formation" },
+    { label: t('nav.management_control'), path: "/controle-gestion" },
+    { label: t('nav.blog'), path: "/blog" },
+    { label: t('nav.contact'), path: "/contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,6 +70,7 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
+              <LanguageSwitcher />
             </nav>
 
 
@@ -108,6 +112,9 @@ const Header = () => {
                     {item.label}
                   </Link>
                 ))}
+                <div className="pt-4 border-t border-border">
+                  <LanguageSwitcher />
+                </div>
               </nav>
             </motion.div>
           )}

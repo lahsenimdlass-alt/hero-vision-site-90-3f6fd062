@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
+import { useLanguage } from "@/contexts/LanguageContext";
 import fallbackLogo from "@/assets/logo.jpg";
 
 const Footer = () => {
   const { data: logoImage } = useSiteImage("logo");
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-[hsl(212,55%,18%)] text-white">
@@ -19,23 +21,22 @@ const Footer = () => {
               className="h-16 w-auto bg-primary-foreground p-2 rounded-lg"
             />
             <p className="text-white/80 text-sm leading-relaxed">
-              Cabinet Général de Consulting - Experts en accompagnement stratégique 
-              et en conseil opérationnel pour transformer vos ambitions en actions concrètes.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-6">Navigation</h4>
+            <h4 className="font-display text-lg font-semibold mb-6">{t('footer.navigation')}</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Accueil
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Contact
+                  {t('nav.contact')}
                 </Link>
               </li>
             </ul>
@@ -43,26 +44,26 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-6">Nos Services</h4>
+            <h4 className="font-display text-lg font-semibold mb-6">{t('footer.services')}</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/accompagnement" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Conseil & Accompagnement
+                  {t('nav.consulting')}
                 </Link>
               </li>
               <li>
                 <Link to="/recrutement" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Recrutement
+                  {t('nav.recruitment')}
                 </Link>
               </li>
               <li>
                 <Link to="/formation" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Formation
+                  {t('nav.training')}
                 </Link>
               </li>
               <li>
                 <Link to="/controle-gestion" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Contrôle de Gestion
+                  {t('nav.management_control')}
                 </Link>
               </li>
             </ul>
@@ -70,7 +71,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-6">Contact</h4>
+            <h4 className="font-display text-lg font-semibold mb-6">{t('footer.contact')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-white" />
@@ -119,7 +120,7 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/60">
-            © {new Date().getFullYear()} Cabinet Général de Consulting. Tous droits réservés.
+            © {new Date().getFullYear()} Cabinet Général de Consulting. {t('footer.rights')}
           </p>
           <p className="text-sm text-white/60">
             www.cabinetgeneraldeconsulting.ma
