@@ -204,10 +204,16 @@ const AdminBlogs = () => {
             <div className="flex items-center gap-4">
               <Button
                 variant="outline"
+                onClick={() => navigate('/admin/content')}
+              >
+                Contenu
+              </Button>
+              <Button
+                variant="outline"
                 onClick={() => navigate('/admin/images')}
               >
                 <ImageIcon className="w-4 h-4 mr-2" />
-                Gérer les Images
+                Images
               </Button>
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>

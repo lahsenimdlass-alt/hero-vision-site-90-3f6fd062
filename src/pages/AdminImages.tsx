@@ -241,9 +241,15 @@ const AdminImages = () => {
             <div className="flex items-center gap-4">
               <Button
                 variant="outline"
+                onClick={() => navigate('/admin/content')}
+              >
+                Contenu
+              </Button>
+              <Button
+                variant="outline"
                 onClick={() => navigate('/admin/blogs')}
               >
-                Gérer les Articles
+                Articles
               </Button>
               <Button variant="outline" onClick={handleLogout}>
                 <LogOut className="w-4 h-4 mr-2" />
