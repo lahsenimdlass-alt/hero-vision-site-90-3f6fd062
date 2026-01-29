@@ -13,9 +13,9 @@ import {
   Image as ImageIcon,
   FileText,
   Search,
-  ChevronDown,
-  ChevronRight,
-  Globe,
+  Bold,
+  Minus,
+  Plus,
 } from "lucide-react";
 import {
   Accordion,
@@ -23,8 +23,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { translations, Language } from "@/i18n/translations";
 import {
   useAllSiteContent,
@@ -329,6 +334,35 @@ const AdminContent = () => {
                               const value = getCurrentValue(key, selectedLanguage);
                               const isLongText = value.length > 100;
 
+                              // Extract formatting from value
+                              const formatMatch = value.match(/^\[format:(.*?)\]/);
+                              const formatString = formatMatch ? formatMatch[1] : "";
+                              const isBold = formatString.includes("bold");
+                              const sizeMatch = formatString.match(/size:(\d+)/);
+                              const textSize = sizeMatch ? parseInt(sizeMatch[1]) : 16;
+                              const cleanValue = value.replace(/^\[format:.*?\]/, "");
+
+                              const toggleBold = () => {
+                                const newBold = !isBold;
+                                const newFormat = buildFormatString(newBold, textSize);
+                                const newValue = newFormat ? `[format:${newFormat}]${cleanValue}` : cleanValue;
+                                handleContentChange(key, selectedLanguage, newValue);
+                              };
+
+                              const changeSize = (delta: number) => {
+                                const newSize = Math.max(12, Math.min(32, textSize + delta));
+                                const newFormat = buildFormatString(isBold, newSize);
+                                const newValue = newFormat ? `[format:${newFormat}]${cleanValue}` : cleanValue;
+                                handleContentChange(key, selectedLanguage, newValue);
+                              };
+
+                              const buildFormatString = (bold: boolean, size: number) => {
+                                const parts: string[] = [];
+                                if (bold) parts.push("bold");
+                                if (size !== 16) parts.push(`size:${size}`);
+                                return parts.join(",");
+                              };
+
                               return (
                                 <div
                                   key={key}
@@ -351,6 +385,50 @@ const AdminContent = () => {
                                       )}
                                     </div>
                                     <div className="flex items-center gap-2">
+                                      {/* Format Controls */}
+                                      <div className="flex items-center gap-1 border rounded-md p-1 bg-background">
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button
+                                              variant={isBold ? "secondary" : "ghost"}
+                                              size="sm"
+                                              className="h-7 w-7 p-0"
+                                              onClick={toggleBold}
+                                            >
+                                              <Bold className="w-3.5 h-3.5" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>Gras</TooltipContent>
+                                        </Tooltip>
+                                        <div className="w-px h-5 bg-border" />
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="h-7 w-7 p-0"
+                                              onClick={() => changeSize(-2)}
+                                            >
+                                              <Minus className="w-3.5 h-3.5" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>Réduire</TooltipContent>
+                                        </Tooltip>
+                                        <span className="text-xs font-mono w-6 text-center">{textSize}</span>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="h-7 w-7 p-0"
+                                              onClick={() => changeSize(2)}
+                                            >
+                                              <Plus className="w-3.5 h-3.5" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>Agrandir</TooltipContent>
+                                        </Tooltip>
+                                      </div>
                                       {(hasEdit || modified) && (
                                         <Button
                                           variant="ghost"
@@ -379,27 +457,31 @@ const AdminContent = () => {
                                   </div>
                                   {isLongText ? (
                                     <Textarea
-                                      value={value}
-                                      onChange={(e) =>
-                                        handleContentChange(
-                                          key,
-                                          selectedLanguage,
-                                          e.target.value
-                                        )
-                                      }
+                                      value={cleanValue}
+                                      onChange={(e) => {
+                                        const format = buildFormatString(isBold, textSize);
+                                        const newValue = format ? `[format:${format}]${e.target.value}` : e.target.value;
+                                        handleContentChange(key, selectedLanguage, newValue);
+                                      }}
                                       rows={4}
                                       className="resize-y"
+                                      style={{
+                                        fontWeight: isBold ? "bold" : "normal",
+                                        fontSize: `${textSize}px`,
+                                      }}
                                     />
                                   ) : (
                                     <Input
-                                      value={value}
-                                      onChange={(e) =>
-                                        handleContentChange(
-                                          key,
-                                          selectedLanguage,
-                                          e.target.value
-                                        )
-                                      }
+                                      value={cleanValue}
+                                      onChange={(e) => {
+                                        const format = buildFormatString(isBold, textSize);
+                                        const newValue = format ? `[format:${format}]${e.target.value}` : e.target.value;
+                                        handleContentChange(key, selectedLanguage, newValue);
+                                      }}
+                                      style={{
+                                        fontWeight: isBold ? "bold" : "normal",
+                                        fontSize: `${textSize}px`,
+                                      }}
                                     />
                                   )}
                                 </div>

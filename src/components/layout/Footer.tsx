@@ -93,9 +93,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-              <a href="mailto:k.bouhaji@cabinetgeneraldeconsulting.ma" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+              <a href="mailto:k.bouhaji@cabinetgeneraldeconsulting.com" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                   <Mail className="w-5 h-5 text-white" />
-                  <span className="text-sm">k.bouhaji@cabinetgeneraldeconsulting.ma</span>
+                  <span className="text-sm">k.bouhaji@cabinetgeneraldeconsulting.com</span>
                 </a>
               </li>
             </ul>
@@ -123,7 +123,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Cabinet Général de Consulting. {t('footer.rights')}
           </p>
           <p className="text-sm text-white/60">
-            www.cabinetgeneraldeconsulting.ma
+            www.cabinetgeneraldeconsulting.com
           </p>
         </div>
       </div>
