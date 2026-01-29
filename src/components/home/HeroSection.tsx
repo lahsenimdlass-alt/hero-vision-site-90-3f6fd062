@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
 import AnimatedCounter from "./AnimatedCounter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { FormattedText } from "@/components/ui/FormattedText";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -45,7 +46,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-white text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase mb-3 md:mb-4"
           >
-            {t('hero.company_name')}
+            <FormattedText contentKey="hero.company_name" />
           </motion.p>
 
           <motion.h1

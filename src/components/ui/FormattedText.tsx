@@ -1,13 +1,17 @@
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 interface FormattedTextProps {
-  content: string;
+  contentKey: string;
   className?: string;
   as?: keyof JSX.IntrinsicElements;
 }
 
 /**
- * Parse and render text with formatting markers.
+ * Parse text with formatting markers.
  * Format: [format:bold,size:18]Text content
  */
 export const parseFormattedText = (content: string) => {
@@ -26,11 +30,36 @@ export const parseFormattedText = (content: string) => {
 };
 
 export const FormattedText: React.FC<FormattedTextProps> = ({
-  content,
+  contentKey,
   className = "",
   as: Component = "span",
 }) => {
-  const { text, isBold, fontSize } = parseFormattedText(content);
+  const { language } = useLanguage();
+  
+  // Fetch content from database
+  const { data: dbContent } = useQuery({
+    queryKey: ['site_content_formatted', contentKey, language],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('site_content')
+        .select('content')
+        .eq('content_key', contentKey)
+        .eq('language', language)
+        .maybeSingle();
+      
+      if (error) {
+        console.error('Error fetching formatted content:', error);
+        return null;
+      }
+      return data?.content || null;
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+
+  // Get the raw content - prioritize database, fallback to static
+  const rawContent = dbContent || (translations[language] as Record<string, string>)[contentKey] || contentKey;
+  
+  const { text, isBold, fontSize } = parseFormattedText(rawContent);
 
   const style: React.CSSProperties = {};
   if (isBold) style.fontWeight = "bold";
