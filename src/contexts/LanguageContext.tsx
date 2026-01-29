@@ -2,16 +2,24 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { translations, Language, TranslationKey } from '@/i18n/translations';
+import { parseFormattedText } from '@/components/ui/FormattedText';
 
 interface SiteContent {
   content_key: string;
   content: string;
 }
 
+interface FormattedContent {
+  text: string;
+  isBold: boolean;
+  fontSize?: number;
+}
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: TranslationKey | string) => string;
+  tFormatted: (key: TranslationKey | string) => FormattedContent;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -56,13 +64,36 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('language', lang);
   };
 
+  // Get raw content (with formatting markers stripped for backwards compatibility)
   const t = (key: TranslationKey | string): string => {
+    let rawContent: string;
+    
     // First check if there's a database override
     if (contentMap[key]) {
-      return contentMap[key];
+      rawContent = contentMap[key];
+    } else {
+      // Fall back to static translations
+      rawContent = (translations[language] as Record<string, string>)[key] || key;
     }
-    // Fall back to static translations
-    return (translations[language] as Record<string, string>)[key] || key;
+    
+    // Strip formatting markers for backwards compatibility
+    const { text } = parseFormattedText(rawContent);
+    return text;
+  };
+
+  // Get formatted content with styling info
+  const tFormatted = (key: TranslationKey | string): FormattedContent => {
+    let rawContent: string;
+    
+    // First check if there's a database override
+    if (contentMap[key]) {
+      rawContent = contentMap[key];
+    } else {
+      // Fall back to static translations
+      rawContent = (translations[language] as Record<string, string>)[key] || key;
+    }
+    
+    return parseFormattedText(rawContent);
   };
 
   useEffect(() => {
@@ -70,7 +101,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   }, [language]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, tFormatted }}>
       {children}
     </LanguageContext.Provider>
   );

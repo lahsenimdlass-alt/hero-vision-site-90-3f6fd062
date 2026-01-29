@@ -257,7 +257,7 @@ export const translations = {
 
     // Contrôle de Gestion Page
     'controle.label': 'Contrôle de Gestion',
-    'controle.title': 'Mise en place Et accompagnement du contrôle de gestion et du reporting',
+    'controle.title': 'Mise en place & accompagnement du contrôle de gestion et du reporting',
     'controle.description': 'Le Cabinet Général de Consulting (CGC) accompagne les entreprises dans la mise en place, la structuration et l\'optimisation du contrôle de gestion, ainsi que dans le déploiement de reportings fiables et pertinents, véritables outils de pilotage et d\'aide à la décision.',
     'controle.interventions_title': 'Nos axes d\'intervention',
     'controle.intervention1': 'Diagnostic de la fonction contrôle de gestion : analyse des processus, des outils, des pratiques et des besoins décisionnels',
@@ -552,7 +552,7 @@ export const translations = {
 
     // Contrôle de Gestion Page
     'controle.label': 'Management Control',
-    'controle.title': 'Implementation and support for management control and reporting',
+    'controle.title': 'Implementation & support for management control and reporting',
     'controle.description': 'The General Consulting Firm (CGC) supports companies in the implementation, structuring, and optimization of management control, as well as in the deployment of reliable and relevant reporting, true management and decision-making tools.',
     'controle.interventions_title': 'Our areas of intervention',
     'controle.intervention1': 'Management control function diagnosis: process, tools, practices, and decision-making needs analysis',

@@ -111,13 +111,13 @@ const ControleGestion = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <span className="text-4xl">🎯</span>
-              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="text-5xl md:text-6xl">🎯</span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
                 {t('controle.global_objective')}
               </h2>
             </div>
-            <p className="text-foreground leading-relaxed">
+            <p className="text-foreground text-lg leading-relaxed">
               {t('controle.global_objective_desc')}
             </p>
           </motion.div>
@@ -133,9 +133,12 @@ const ControleGestion = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              {t('controle.specific_objectives')}
-            </h2>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="text-4xl">🎯</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">
+                {t('controle.specific_objectives')}
+              </h2>
+            </div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
