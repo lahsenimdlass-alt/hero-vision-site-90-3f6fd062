@@ -79,7 +79,7 @@ export const translations = {
     'cta.get_quote': 'Demander un devis gratuit',
 
     // Footer
-    'footer.description': 'Cabinet Général de Consulting - Experts en accompagnement stratégique et en conseil opérationnel pour transformer vos ambitions en actions concrètes.',
+    'footer.description': 'Cabinet Général de Consulting. Experts en accompagnement stratégique et en conseil opérationnel pour transformer vos ambitions en actions concrètes.',
     'footer.navigation': 'Navigation',
     'footer.services': 'Nos Services',
     'footer.contact': 'Contact',
@@ -374,7 +374,7 @@ export const translations = {
     'cta.get_quote': 'Get a free quote',
 
     // Footer
-    'footer.description': 'General Consulting Firm - Experts in strategic support and operational consulting to transform your ambitions into concrete actions.',
+    'footer.description': 'General Consulting Firm. Experts in strategic support and operational consulting to transform your ambitions into concrete actions.',
     'footer.navigation': 'Navigation',
     'footer.services': 'Our Services',
     'footer.contact': 'Contact',
