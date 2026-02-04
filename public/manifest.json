@@ -1,0 +1,25 @@
+{
+  "name": "Cabinet Général de Consulting",
+  "short_name": "CGC",
+  "description": "Experts en accompagnement stratégique, contrôle de gestion, formation professionnelle et recrutement au Maroc",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a365d",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.jpg",
+      "sizes": "180x180",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
