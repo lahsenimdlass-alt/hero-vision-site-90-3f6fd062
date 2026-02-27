@@ -13,6 +13,16 @@ const ControleGestion = () => {
   useDocumentSEO({
     title: "Contrôle de Gestion Externalisé au Maroc | CGC Casablanca",
     description: "Contrôle de gestion externalisé à Casablanca : pilotage de la performance, tableaux de bord, reporting et optimisation des coûts. +23 ans d'expérience.",
+    path: "/controle-gestion",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Contrôle de Gestion Externalisé",
+      "provider": { "@type": "Organization", "name": "Cabinet Général de Consulting" },
+      "description": "Contrôle de gestion externalisé : pilotage de la performance, tableaux de bord, reporting et optimisation des coûts.",
+      "areaServed": { "@type": "Country", "name": "Morocco" },
+      "serviceType": "Contrôle de gestion",
+    },
   });
 
   const interventions = [

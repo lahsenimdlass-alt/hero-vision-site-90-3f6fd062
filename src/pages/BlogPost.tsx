@@ -22,6 +22,17 @@ const BlogPost = () => {
   useDocumentSEO({
     title: blog ? `${blog.title} | CGC Blog` : "Article | CGC Blog",
     description: blog ? blog.title : "Lisez nos articles sur le conseil stratégique et l'accompagnement d'entreprises au Maroc.",
+    path: `/blog/${slug}`,
+    type: "article",
+    jsonLd: blog ? {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": blog.title,
+      "url": `https://cabinetgeneraldeconsulting.ma/blog/${slug}`,
+      "datePublished": blog.created_at,
+      "image": blog.image_url || "https://cabinetgeneraldeconsulting.ma/og-image.jpg",
+      "publisher": { "@type": "Organization", "name": "Cabinet Général de Consulting" },
+    } : undefined,
   });
 
   useEffect(() => {

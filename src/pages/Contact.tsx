@@ -18,6 +18,20 @@ const Contact = () => {
   useDocumentSEO({
     title: "Contactez CGC | Cabinet de Conseil à Casablanca, Maroc",
     description: "Contactez le Cabinet Général de Consulting à Casablanca. Demandez un devis ou un rendez-vous pour nos services de conseil, formation et recrutement.",
+    path: "/contact",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact - Cabinet Général de Consulting",
+      "url": "https://cabinetgeneraldeconsulting.ma/contact",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Cabinet Général de Consulting",
+        "telephone": "+212701221464",
+        "email": "k.bouhaji@cabinetgeneraldeconsulting.com",
+        "address": { "@type": "PostalAddress", "streetAddress": "Ang Bd Zerktouni, 7 Rue Sebta Res Rami, 2ème étage N° 8", "addressLocality": "Casablanca", "addressCountry": "MA" },
+      },
+    },
   });
   const [formData, setFormData] = useState({
     name: "",
