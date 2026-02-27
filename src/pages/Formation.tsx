@@ -3,11 +3,17 @@ import Layout from "@/components/layout/Layout";
 import { GraduationCap, CheckCircle, FileText, Users, Building2, Star, Settings, User, PiggyBank, Handshake, Monitor } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import useDocumentSEO from "@/hooks/useDocumentSEO";
 import formationDefaultImage from "@/assets/formation.jpeg";
 
 const Formation = () => {
   const { data: formationImage } = useSiteImage("formation_image");
   const { t } = useLanguage();
+
+  useDocumentSEO({
+    title: "Formation Professionnelle au Maroc | CGC Casablanca",
+    description: "Formations professionnelles sur-mesure à Casablanca : management, finance, RH, achats, digital. Éligibles CSF/OFPPT. Cabinet Général de Consulting.",
+  });
 
   const trainingDomains = [
     { icon: Star, title: t('formation.domain1'), description: t('formation.domain1_desc') },

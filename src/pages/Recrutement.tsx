@@ -3,11 +3,17 @@ import Layout from "@/components/layout/Layout";
 import { UserCheck, CheckCircle, Target, Search, Award, Handshake } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import useDocumentSEO from "@/hooks/useDocumentSEO";
 import handshakeImage from "@/assets/business-handshake.jpg";
 
 const Recrutement = () => {
   const { data: recrutementImage } = useSiteImage("recrutement_image");
   const { t } = useLanguage();
+
+  useDocumentSEO({
+    title: "Recrutement & Chasse de Têtes au Maroc | CGC Casablanca",
+    description: "Cabinet de recrutement à Casablanca spécialisé dans la chasse de têtes et le sourcing de profils cadres, dirigeants et experts. Approche sur-mesure.",
+  });
 
   const profils = [
     t('recrutement.profile1'),

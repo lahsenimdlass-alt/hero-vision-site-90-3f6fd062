@@ -3,11 +3,17 @@ import Layout from "@/components/layout/Layout";
 import { CheckCircle } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import useDocumentSEO from "@/hooks/useDocumentSEO";
 import controleGestionHeroImage from "@/assets/controle-gestion-hero.jpeg";
 
 const ControleGestion = () => {
   const { data: controleImage } = useSiteImage("controle_gestion_image");
   const { t } = useLanguage();
+
+  useDocumentSEO({
+    title: "Contrôle de Gestion Externalisé au Maroc | CGC Casablanca",
+    description: "Contrôle de gestion externalisé à Casablanca : pilotage de la performance, tableaux de bord, reporting et optimisation des coûts. +23 ans d'expérience.",
+  });
 
   const interventions = [
     t('controle.intervention1'),

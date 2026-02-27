@@ -5,6 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import useDocumentSEO from '@/hooks/useDocumentSEO';
 
 interface Blog {
   id: string;
@@ -19,6 +20,11 @@ const Blog = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const { t, language } = useLanguage();
+
+  useDocumentSEO({
+    title: "Blog & Actualités Consulting | CGC Maroc",
+    description: "Articles et actualités sur le conseil stratégique, la gestion d'entreprise, la formation et le recrutement au Maroc. Blog du Cabinet Général de Consulting.",
+  });
 
   useEffect(() => {
     fetchBlogs();

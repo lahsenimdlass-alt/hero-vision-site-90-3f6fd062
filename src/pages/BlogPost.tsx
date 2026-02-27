@@ -4,6 +4,7 @@ import Layout from '@/components/layout/Layout';
 import { supabase } from '@/integrations/supabase/client';
 import { Calendar, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
+import useDocumentSEO from '@/hooks/useDocumentSEO';
 
 interface Blog {
   id: string;
@@ -17,6 +18,11 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
+
+  useDocumentSEO({
+    title: blog ? `${blog.title} | CGC Blog` : "Article | CGC Blog",
+    description: blog ? blog.title : "Lisez nos articles sur le conseil stratégique et l'accompagnement d'entreprises au Maroc.",
+  });
 
   useEffect(() => {
     if (slug) {
