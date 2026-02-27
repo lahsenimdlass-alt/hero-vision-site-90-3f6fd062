@@ -3,11 +3,17 @@ import Layout from "@/components/layout/Layout";
 import { Settings, BarChart3, Users, ShoppingCart, TrendingUp, Cog, Truck, CheckCircle, Monitor, Award, Target } from "lucide-react";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import useDocumentSEO from "@/hooks/useDocumentSEO";
 import conseilAccompagnementImage from "@/assets/conseil-accompagnement.jpeg";
 
 const Accompagnement = () => {
   const { data: accompagnementImage } = useSiteImage("accompagnement_image");
   const { t } = useLanguage();
+
+  useDocumentSEO({
+    title: "Accompagnement & Conseil Stratégique | CGC Casablanca Maroc",
+    description: "Accompagnement stratégique des entreprises au Maroc : finance, RH, achats, commercial, production, logistique et SI. Cabinet Général de Consulting.",
+  });
 
   const fonctions = [
     {

@@ -8,11 +8,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { useSiteImage } from "@/hooks/useSiteImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import useDocumentSEO from "@/hooks/useDocumentSEO";
 import officeImage from "@/assets/business-woman-office.jpg";
 
 const Contact = () => {
   const { data: contactImage } = useSiteImage("contact_image");
   const { t, language } = useLanguage();
+
+  useDocumentSEO({
+    title: "Contactez CGC | Cabinet de Conseil à Casablanca, Maroc",
+    description: "Contactez le Cabinet Général de Consulting à Casablanca. Demandez un devis ou un rendez-vous pour nos services de conseil, formation et recrutement.",
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
