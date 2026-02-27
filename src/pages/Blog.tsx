@@ -24,6 +24,15 @@ const Blog = () => {
   useDocumentSEO({
     title: "Blog & Actualités Consulting | CGC Maroc",
     description: "Articles et actualités sur le conseil stratégique, la gestion d'entreprise, la formation et le recrutement au Maroc. Blog du Cabinet Général de Consulting.",
+    path: "/blog",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog - Cabinet Général de Consulting",
+      "url": "https://cabinetgeneraldeconsulting.ma/blog",
+      "publisher": { "@type": "Organization", "name": "Cabinet Général de Consulting" },
+      "description": "Articles et actualités sur le conseil stratégique, la gestion d'entreprise et le recrutement au Maroc.",
+    },
   });
 
   useEffect(() => {

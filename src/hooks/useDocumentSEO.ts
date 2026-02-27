@@ -3,37 +3,88 @@ import { useEffect } from "react";
 interface SEOProps {
   title: string;
   description: string;
+  path?: string;
+  type?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
-/**
- * Sets the document <title> and <meta name="description"> for the current page.
- * Ensures only one title and one meta description exist at a time.
- */
-const useDocumentSEO = ({ title, description }: SEOProps) => {
+const SITE_NAME = "Cabinet Général de Consulting";
+const BASE_URL = "https://cabinetgeneraldeconsulting.ma";
+const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
+
+const setMetaTag = (property: string, content: string, isOg = false) => {
+  const attr = isOg ? "property" : "name";
+  let el = document.querySelector(`meta[${attr}="${property}"]`);
+  if (el) {
+    el.setAttribute("content", content);
+  } else {
+    el = document.createElement("meta");
+    el.setAttribute(attr, property);
+    el.setAttribute("content", content);
+    document.head.appendChild(el);
+  }
+};
+
+const useDocumentSEO = ({ title, description, path = "/", type = "website", jsonLd }: SEOProps) => {
   useEffect(() => {
-    // Set document title
+    const fullUrl = `${BASE_URL}${path}`;
+
+    // Title
     document.title = title;
 
-    // Set or update meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", description);
+    // Meta description
+    setMetaTag("description", description);
+
+    // Open Graph
+    setMetaTag("og:title", title, true);
+    setMetaTag("og:description", description, true);
+    setMetaTag("og:url", fullUrl, true);
+    setMetaTag("og:type", type, true);
+    setMetaTag("og:image", OG_IMAGE, true);
+    setMetaTag("og:site_name", SITE_NAME, true);
+    setMetaTag("og:locale", "fr_FR", true);
+
+    // Twitter
+    setMetaTag("twitter:title", title);
+    setMetaTag("twitter:description", description);
+    setMetaTag("twitter:image", OG_IMAGE);
+
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (canonical) {
+      canonical.href = fullUrl;
     } else {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      metaDescription.setAttribute("content", description);
-      document.head.appendChild(metaDescription);
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      canonical.href = fullUrl;
+      document.head.appendChild(canonical);
     }
 
-    // Cleanup: restore default on unmount
-    return () => {
-      document.title = "Cabinet Général de Consulting | Conseil Stratégique & Accompagnement au Maroc";
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) {
-        meta.setAttribute("content", "Cabinet Général de Consulting (CGC) - Experts en accompagnement stratégique, contrôle de gestion, formation professionnelle et recrutement à Casablanca, Maroc. Plus de 23 ans d'expérience.");
+    // JSON-LD
+    let scriptEl = document.querySelector('script[data-seo-jsonld]') as HTMLScriptElement | null;
+    if (jsonLd) {
+      if (!scriptEl) {
+        scriptEl = document.createElement("script");
+        scriptEl.type = "application/ld+json";
+        scriptEl.setAttribute("data-seo-jsonld", "true");
+        document.head.appendChild(scriptEl);
       }
+      scriptEl.textContent = JSON.stringify(jsonLd);
+    } else if (scriptEl) {
+      scriptEl.remove();
+    }
+
+    return () => {
+      // Reset to defaults
+      document.title = `${SITE_NAME} | Conseil Stratégique & Accompagnement au Maroc`;
+      setMetaTag("description", "Cabinet Général de Consulting (CGC) - Experts en accompagnement stratégique, contrôle de gestion, formation professionnelle et recrutement à Casablanca, Maroc.");
+      setMetaTag("og:url", BASE_URL, true);
+      setMetaTag("og:title", `${SITE_NAME} | Conseil Stratégique au Maroc`, true);
+      if (canonical) canonical.href = `${BASE_URL}/`;
+      const s = document.querySelector('script[data-seo-jsonld]');
+      if (s) s.remove();
     };
-  }, [title, description]);
+  }, [title, description, path, type, jsonLd]);
 };
 
 export default useDocumentSEO;

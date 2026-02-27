@@ -13,6 +13,16 @@ const Accompagnement = () => {
   useDocumentSEO({
     title: "Accompagnement & Conseil Stratégique | CGC Casablanca Maroc",
     description: "Accompagnement stratégique des entreprises au Maroc : finance, RH, achats, commercial, production, logistique et SI. Cabinet Général de Consulting.",
+    path: "/accompagnement",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Accompagnement & Conseil Stratégique",
+      "provider": { "@type": "Organization", "name": "Cabinet Général de Consulting" },
+      "description": "Accompagnement stratégique des entreprises : finance, RH, achats, commercial, production, logistique et systèmes d'information.",
+      "areaServed": { "@type": "Country", "name": "Morocco" },
+      "serviceType": "Conseil en management",
+    },
   });
 
   const fonctions = [

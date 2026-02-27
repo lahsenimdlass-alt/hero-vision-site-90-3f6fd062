@@ -13,6 +13,16 @@ const Recrutement = () => {
   useDocumentSEO({
     title: "Recrutement & Chasse de Têtes au Maroc | CGC Casablanca",
     description: "Cabinet de recrutement à Casablanca spécialisé dans la chasse de têtes et le sourcing de profils cadres, dirigeants et experts. Approche sur-mesure.",
+    path: "/recrutement",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Recrutement & Chasse de Têtes",
+      "provider": { "@type": "Organization", "name": "Cabinet Général de Consulting" },
+      "description": "Recrutement de cadres, dirigeants et profils experts au Maroc. Chasse de têtes et sourcing sur-mesure.",
+      "areaServed": { "@type": "Country", "name": "Morocco" },
+      "serviceType": "Recrutement",
+    },
   });
 
   const profils = [
