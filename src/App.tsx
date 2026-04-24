@@ -18,6 +18,7 @@ import AdminBlogs from "./pages/AdminBlogs";
 import AdminImages from "./pages/AdminImages";
 import AdminContent from "./pages/AdminContent";
 import NotFound from "./pages/NotFound";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <AnalyticsTracker />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/accompagnement" element={<Accompagnement />} />
