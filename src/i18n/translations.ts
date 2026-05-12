@@ -206,7 +206,7 @@ export const translations = {
     // Formation Page
     'formation.label': 'Formation',
     'formation.title': 'Formation & Développement des Compétences',
-    'formation.description': 'Le Cabinet CGC offre des formations structurées, animées par des experts pluridisciplinaires cumulant plus de 20 ans d\'expérience, pour un apprentissage concret et impactant.',
+    'formation.description': 'Le Cabinet CGC offre des formations structurées, animées par des experts pluridisciplinaires cumulant plus de 22 ans d\'expérience, pour un apprentissage concret et impactant.',
     'formation.intro': 'Le Cabinet CGC offre des formations structurées, animées par des experts pluridisciplinaires cumulant plus de 20 ans d\'expérience, pour un apprentissage concret et impactant.',
     'formation.domains_title': 'Nos Domaines de Formation',
     'formation.domains_subtitle': 'Des programmes adaptés à chaque besoin pour développer les compétences de vos équipes',
