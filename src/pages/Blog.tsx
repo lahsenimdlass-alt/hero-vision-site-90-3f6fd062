@@ -23,7 +23,7 @@ const Blog = () => {
 
   useDocumentSEO({
     title: "Blog & Actualités Consulting | CGC Maroc",
-    description: "Articles et actualités sur le conseil stratégique, la gestion d'entreprise, la formation et le recrutement au Maroc. Blog du Cabinet Général de Consulting.",
+    description: "Articles et actualites sur le conseil stratégique, la gestion d'entreprise, la formation et le recrutement au Maroc. Blog du Cabinet Général de Consulting.",
     path: "/blog",
     jsonLd: {
       "@context": "https://schema.org",
