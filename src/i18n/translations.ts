@@ -204,7 +204,7 @@ export const translations = {
     'recrutement.obj3': 'Apporter des talents immédiatement opérationnels',
 
     // Formation Page
-    'formation.label': 'Formation',
+    'formation.label': 'Formationn',
     'formation.title': 'Formation & Développement des Compétences',
     'formation.description': 'Le Cabinet CGC offre des formations structurées, animées par des experts pluridisciplinaires cumulant plus de 20 ans d\'expérience, pour un apprentissage concret et impactant.',
     'formation.intro': 'Le Cabinet CGC offre des formations structurées, animées par des experts pluridisciplinaires cumulant plus de 20 ans d\'expérience, pour un apprentissage concret et impactant.',
